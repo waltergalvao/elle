@@ -13,8 +13,18 @@ class Batch extends Model
      */
     protected $fillable = [
         'name',
-        'status',
-        'processed_lines',
-        'total_lines',
+        'data',
+        'is_processed',
     ];
+
+    /**
+     * @var array
+     */
+    public $casts = [
+        'data' => 'array'
+    ];
+
+    public function process() {
+
+    }
 }
