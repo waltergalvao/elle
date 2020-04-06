@@ -12,7 +12,15 @@ Vue.config.devtools = true;
 const vue = new Vue({
     router,
     render: h => h(App),
-    vuetify: new Vuetify()
+    vuetify: new Vuetify({
+        theme:{
+            themes: {
+                light: {
+                    primary: '#21273D',
+                }
+            }
+        }
+    })
 });
 
 vue.$mount("#app");
