@@ -3,30 +3,45 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreBatchRequest;
+use App\Http\Resources\BatchCollection;
+use App\Http\Resources\BatchResource;
 use App\Models\Batch;
-use Illuminate\Database\Eloquent\Collection;
 
 class BatchController extends Controller
 {
     /**
-     * @return Batch[]|Collection
+     * @return BatchCollection
      */
     public function index()
     {
-        return Batch::all();
+        return new BatchCollection(Batch::all());
+    }
+
+    /**
+     * @param string $batchId
+     * @return BatchResource
+     */
+    public function get(string $batchId)
+    {
+        $batch = Batch::with('logs')->find($batchId);
+
+        return new BatchResource($batch);
     }
 
     /**
      * @param StoreBatchRequest $request
-     * @return Batch
+     * @return BatchResource
      */
     public function store(StoreBatchRequest $request)
     {
-        $batch = Batch::create([
+        $batch = new Batch([
             'name' => $request->get('name'),
             'data' => $request->get('data')
         ]);
 
-        return $batch;
+        $batch->save();
+        $batch->process();
+
+        return new BatchResource($batch);
     }
 }

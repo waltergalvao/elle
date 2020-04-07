@@ -4,8 +4,8 @@
         :clipped="$vuetify.breakpoint.lgAndUp"
         app
     >
-        <v-list dense>
-            <v-list-item link>
+        <v-list dense class="py-0">
+            <v-list-item :to="{ name: 'batches' }" exact>
                 <v-list-item-action>
                     <v-icon>mdi-cloud</v-icon>
                 </v-list-item-action>
@@ -17,7 +17,7 @@
             </v-list-item>
 
 
-            <v-list-item link>
+            <v-list-item :to="{ name: 'contacts'}">
                 <v-list-item-action>
                     <v-icon>mdi-contacts</v-icon>
                 </v-list-item-action>

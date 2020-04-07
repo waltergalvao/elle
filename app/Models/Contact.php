@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use SocialNetwork;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
@@ -16,13 +15,16 @@ class Contact extends Model
     protected $fillable = [
         'first_name',
         'last_name',
+        'email_provider',
+        'linkedin_url',
+        'is_generic_email',
         'email',
     ];
 
     /**
      * @return MorphMany
      */
-    public function socialNetworks() {
-        return $this->morphMany(SocialNetwork::class, 'owner');
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBatchItemsTable extends Migration
+class CreateBatchLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateBatchItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('batch_items', function (Blueprint $table) {
+        Schema::create('batch_logs', function (Blueprint $table) {
             $table->id();
-            $table->string('contact_email');
-            $table->tinyInteger('status')->default(0);
-            $table->string('error_reason')->nullable();
+            $table->string('contact_email')->nullable();
+            $table->string('error')->nullable();
             $table->boolean('acknowledged')->default(false);
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
             $table->foreignId('batch_id')->constrained()->onDelete('cascade');
         });
@@ -31,6 +31,6 @@ class CreateBatchItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('batch_items');
+        Schema::dropIfExists('batch_logs');
     }
 }

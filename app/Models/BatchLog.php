@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BatchItem extends Model
+class BatchLog extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,8 +13,8 @@ class BatchItem extends Model
      */
     protected $fillable = [
         'contact_email',
+        'error',
         'status',
-        'error_reason',
         'acknowledged',
     ];
 }

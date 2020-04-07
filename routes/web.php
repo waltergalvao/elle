@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['register' => false]);
 
-Route::get('{path}', [HomeController::class, 'index'])->where('path', '^((?!api))*$')->middleware('auth');
+Route::get('{path}', [HomeController::class, 'index'])->where('path', '^((?!api).)*$');
