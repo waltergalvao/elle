@@ -22,6 +22,7 @@ class CreateContactsTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('linkedin_url')->nullable();
             $table->text('notes')->nullable();
+            $table->mediumText('fullcontact')->nullable();
             $table->foreignId('company_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });

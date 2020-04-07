@@ -21,13 +21,16 @@ class Contact extends Model
         'is_work_email',
         'email',
         'notes',
+        'fullcontact',
+        'company_id',
     ];
 
     /**
      * @var array
      */
     public $casts = [
-        'is_work_email' => 'bool'
+        'is_work_email' => 'bool',
+        'fullcontact' => 'array',
     ];
 
     /**
@@ -39,6 +42,7 @@ class Contact extends Model
     {
         static::saving(function ($contact) {
             $emailPieces = explode('@', $contact->email);
+            $contact->email = strtolower($contact->email);
             $contact->email_provider = $emailPieces[1];
             $contact->is_work_email = in_array($contact->email_provider, [
                 'hotmail.com',
@@ -46,6 +50,8 @@ class Contact extends Model
                 'live.com',
                 'me.com',
                 'hotmail.com',
+                'yahoo.com',
+                'shaw.ca',
             ]) === false;
         });
     }

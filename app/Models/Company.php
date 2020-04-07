@@ -19,6 +19,14 @@ class Company extends Model
         'twitter_url',
         'instagram_url',
         'facebook_url',
+        'fullcontact',
+    ];
+
+    /**
+     * @var array
+     */
+    public $casts = [
+        'fullcontact' => 'array',
     ];
 
     /**

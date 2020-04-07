@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['register' => false]);
 
+Route::get('/api/viewSheet', [\App\Sheets\ContactExport::class, 'view'])->where('path', '^((?!api).)*$');
 Route::get('{path}', [HomeController::class, 'index'])->where('path', '^((?!api).)*$');
