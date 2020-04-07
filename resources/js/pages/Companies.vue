@@ -24,6 +24,18 @@
                 :headers="headers"
                 :items="comapnies"
             >
+                <template v-slot:item.linkedin_url="{ item }">
+                    <a :href="item.linkedin_url" target="_blank" rel="nofollow">{{ item.linkedin_url}}</a>
+                </template>
+                <template v-slot:item.actions="{ item }">
+                    <v-btn
+                        icon
+                        :to="{ name: 'companies.edit', params: {id: item.id}}"
+                        exact
+                    >
+                        <v-icon>mdi-pencil</v-icon>
+                    </v-btn>
+                </template>
             </v-data-table>
         </template>
     </div>
@@ -45,6 +57,7 @@
                     { text: 'Name', value: 'name' },
                     { text: 'Domain', value: 'domain' },
                     { text: 'LinkedIn', value: 'linkedin_url' },
+                    { text: 'Actions', value: 'actions', align: 'end' },
                 ]
             }
         },

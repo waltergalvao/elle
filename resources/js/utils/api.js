@@ -5,10 +5,17 @@ class Api {
         this.axios = axios.create({});
     }
 
-    get (route, params) {
+    get(route, params) {
         return this.axios.get(
             route,
             params
+        );
+    }
+
+    put(route, data) {
+        return this.axios.put(
+            route,
+            data
         );
     }
 

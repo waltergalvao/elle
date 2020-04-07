@@ -24,7 +24,6 @@
                 :headers="headers"
                 :items="contacts"
                 :items-per-page="10"
-                class="elevation-1"
             >
                 <template v-slot:item.is_work_email="{ item }">
                     <v-chip small color="primary" v-if="item.is_work_email">
@@ -33,6 +32,15 @@
                     <v-chip small color="grey lighten-3" v-else>
                         PERSONAL
                     </v-chip>
+                </template>
+                <template v-slot:item.actions="{ item }">
+                    <v-btn
+                        icon
+                        :to="{ name: 'contact.edit', params: {id: item.id}}"
+                        exact
+                    >
+                        <v-icon>mdi-pencil</v-icon>
+                    </v-btn>
                 </template>
             </v-data-table>
         </template>
@@ -56,6 +64,7 @@
                     { text: 'Email', value: 'email' },
                     { text: 'Provider', value: 'email_provider' },
                     { text: 'Email Type', value: 'is_work_email' },
+                    { text: 'Actions', value: 'actions', align: 'end' },
                 ]
             }
         },
