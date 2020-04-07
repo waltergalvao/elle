@@ -93,7 +93,4 @@ class ProcessBatch implements ShouldQueue
 
         return $validator->fails() === false;
     }
-
-    private function isWorkEmail()
-
 }

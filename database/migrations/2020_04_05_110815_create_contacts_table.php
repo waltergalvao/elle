@@ -16,8 +16,13 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('email')->unique();
+            $table->boolean('is_work_email')->default(false);
+            $table->string('email_provider');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('linkedin_url')->nullable();
+            $table->text('notes')->nullable();
+            $table->foreignId('company_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

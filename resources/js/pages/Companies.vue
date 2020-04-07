@@ -7,7 +7,7 @@
         </template>
         <template v-else>
             <v-toolbar flat>
-                <v-toolbar-title>Contacts</v-toolbar-title>
+                <v-toolbar-title>Companies</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-text-field
                     v-model="search"
@@ -22,18 +22,8 @@
                 fixed-header
                 :search="search"
                 :headers="headers"
-                :items="contacts"
-                :items-per-page="10"
-                class="elevation-1"
+                :items="comapnies"
             >
-                <template v-slot:item.is_work_email="{ item }">
-                    <v-chip small color="primary" v-if="item.is_work_email">
-                        BUSINESS
-                    </v-chip>
-                    <v-chip small color="grey lighten-3" v-else>
-                        PERSONAL
-                    </v-chip>
-                </template>
             </v-data-table>
         </template>
     </div>
@@ -41,31 +31,30 @@
 
 <script>
     import {ContactService} from "../services/contactService";
+    import {CompanyService} from "../services/companyService";
 
     export default {
-        name: 'Contacts',
+        name: 'Companies',
         data() {
             return {
                 isBatchDialogOpen: false,
                 isLoading: true,
-                contacts: [],
+                comapnies: [],
                 search: '',
                 headers: [
-                    { text: 'First Name', value: 'first_name' },
-                    { text: 'Last Name', value: 'last_name' },
-                    { text: 'Email', value: 'email' },
-                    { text: 'Provider', value: 'email_provider' },
-                    { text: 'Email Type', value: 'is_work_email' },
+                    { text: 'Name', value: 'name' },
+                    { text: 'Domain', value: 'domain' },
+                    { text: 'LinkedIn', value: 'linkedin_url' },
                 ]
             }
         },
         created() {
-            this.fetchContacts();
+            this.fetchCompanies();
         },
         methods: {
-            async fetchContacts() {
+            async fetchCompanies() {
                 this.isLoading = true;
-                this.contacts = (await ContactService.all()).data.data;
+                this.comapnies = (await CompanyService.all()).data.data;
                 this.isLoading = false;
             }
         }

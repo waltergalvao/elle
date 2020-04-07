@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Company extends Model
 {
@@ -15,14 +14,18 @@ class Company extends Model
      */
     protected $fillable = [
         'name',
-        'website',
+        'domain',
+        'linkedin_url',
+        'twitter_url',
+        'instagram_url',
+        'facebook_url',
     ];
 
     /**
-     * @return MorphMany
+     * @return HasMany
      */
-    public function socialNetworks() {
-        return $this->morphMany(SocialNetwork::class, 'owner');
+    public function contacts() {
+        return $this->hasMany(Contact::class);
     }
 
     /**

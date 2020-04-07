@@ -43,7 +43,7 @@
     import {ContactService} from "../services/contactService";
 
     export default {
-        name: 'Contacts',
+        name: 'ContactDetails',
         data() {
             return {
                 isBatchDialogOpen: false,

@@ -29,7 +29,7 @@
             </v-list-item>
 
 
-            <v-list-item link>
+            <v-list-item :to="{ name: 'companies'}">
                 <v-list-item-action>
                     <v-icon>mdi-store</v-icon>
                 </v-list-item-action>
