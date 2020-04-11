@@ -23,7 +23,7 @@
                 fixed-header
                 :search="search"
                 :headers="headers"
-                :items="comapnies"
+                :items="companies"
             >
                 <template v-slot:item.linkedin_url="{ item }">
                     <a :href="item.linkedin_url" target="_blank" rel="nofollow">{{ item.linkedin_url}}</a>
@@ -43,8 +43,8 @@
 </template>
 
 <script>
-    import {ContactService} from "../services/contactService";
-    import {CompanyService} from "../services/companyService";
+    import ContactService from "../services/contactService";
+    import CompanyService from "../services/companyService";
 
     export default {
         name: 'Companies',
@@ -52,7 +52,7 @@
             return {
                 isBatchDialogOpen: false,
                 isLoading: true,
-                comapnies: [],
+                companies: [],
                 search: '',
                 headers: [
                     { text: 'Name', value: 'name' },
@@ -68,7 +68,7 @@
         methods: {
             async fetchCompanies() {
                 this.isLoading = true;
-                this.comapnies = (await CompanyService.all()).data.data;
+                this.companies = (await CompanyService.all()).data.data;
                 this.isLoading = false;
             }
         }

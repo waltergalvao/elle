@@ -98,7 +98,7 @@
 </template>
 
 <script>
-    import {CompanyService} from "../services/companyService";
+    import CompanyService from "../services/companyService";
 
     export default {
         name: 'AddCompany',

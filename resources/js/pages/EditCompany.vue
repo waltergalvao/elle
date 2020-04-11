@@ -101,7 +101,7 @@
 </template>
 
 <script>
-    import {CompanyService} from "../services/companyService";
+    import CompanyService from "../services/companyService";
     import SavingChip from "../components/Dumb/VSavingChip";
     import SavedChip from "../components/Dumb/VSavedChip";
 
@@ -121,7 +121,7 @@
         methods: {
             async fetchContacts() {
                 this.isLoading = true;
-                this.company = (await CompanyService.get(this.$route.params.id)).data.data;
+                this.company = (await CompanyService.find(this.$route.params.id)).data.data;
                 this.isLoading = false;
             },
             async save(event, test) {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class Api {
+class ApiService {
     constructor() {
         this.axios = axios.create({});
     }
@@ -27,4 +27,4 @@ class Api {
     }
 }
 
-export default new Api();
+export default ApiService;

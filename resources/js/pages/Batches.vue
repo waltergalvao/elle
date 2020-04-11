@@ -53,7 +53,7 @@
 
 <script>
     import CreateBatchDialog from "../components/Dialogs/CreateBatchDialog";
-    import {BatchService} from "../services/batchService";
+    import BatchService from "../services/batchService";
     export default {
         name: 'Batches',
         components: {CreateBatchDialog},

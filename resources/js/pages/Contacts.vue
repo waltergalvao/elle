@@ -48,7 +48,7 @@
 </template>
 
 <script>
-    import {ContactService} from "../services/contactService";
+    import ContactService from "../services/contactService";
 
     export default {
         name: 'Contacts',

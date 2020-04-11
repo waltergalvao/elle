@@ -2442,7 +2442,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this.isLoading = true;
                 _context.next = 5;
-                return _services_companyService__WEBPACK_IMPORTED_MODULE_1__["CompanyService"].create(_this.company);
+                return _services_companyService__WEBPACK_IMPORTED_MODULE_1__["default"].create(_this.company);
 
               case 5:
                 _this.company = _context.sent.data.data;
@@ -2536,7 +2536,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this.isLoading = true;
                 _context.next = 3;
-                return _services_batchService__WEBPACK_IMPORTED_MODULE_2__["BatchService"].get(_this.$route.params.id);
+                return _services_batchService__WEBPACK_IMPORTED_MODULE_2__["default"].find(_this.$route.params.id);
 
               case 3:
                 _this.batch = _context.sent.data.data;
@@ -2655,7 +2655,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this.isLoading = true;
                 _context.next = 3;
-                return _services_batchService__WEBPACK_IMPORTED_MODULE_2__["BatchService"].all();
+                return _services_batchService__WEBPACK_IMPORTED_MODULE_2__["default"].all();
 
               case 3:
                 _this.batches = _context.sent.data;
@@ -2745,7 +2745,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       isBatchDialogOpen: false,
       isLoading: true,
-      comapnies: [],
+      companies: [],
       search: '',
       headers: [{
         text: 'Name',
@@ -2777,10 +2777,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this.isLoading = true;
                 _context.next = 3;
-                return _services_companyService__WEBPACK_IMPORTED_MODULE_2__["CompanyService"].all();
+                return _services_companyService__WEBPACK_IMPORTED_MODULE_2__["default"].all();
 
               case 3:
-                _this.comapnies = _context.sent.data.data;
+                _this.companies = _context.sent.data.data;
                 _this.isLoading = false;
 
               case 5:
@@ -2908,7 +2908,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this.isLoading = true;
                 _context.next = 3;
-                return _services_contactService__WEBPACK_IMPORTED_MODULE_1__["ContactService"].all();
+                return _services_contactService__WEBPACK_IMPORTED_MODULE_1__["default"].all();
 
               case 3:
                 _this.contacts = _context.sent.data.data;
@@ -3079,7 +3079,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this.isLoading = true;
                 _context.next = 3;
-                return _services_companyService__WEBPACK_IMPORTED_MODULE_1__["CompanyService"].get(_this.$route.params.id);
+                return _services_companyService__WEBPACK_IMPORTED_MODULE_1__["default"].find(_this.$route.params.id);
 
               case 3:
                 _this.company = _context.sent.data.data;
@@ -3103,7 +3103,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this2.isSaving = true;
                 _context2.next = 3;
-                return _services_companyService__WEBPACK_IMPORTED_MODULE_1__["CompanyService"].update(_this2.$route.params.id, _this2.company);
+                return _services_companyService__WEBPACK_IMPORTED_MODULE_1__["default"].update(_this2.$route.params.id, _this2.company);
 
               case 3:
                 _this2.company = _context2.sent.data.data;
@@ -3267,7 +3267,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _services_contactService__WEBPACK_IMPORTED_MODULE_3__["ContactService"].get(contactId);
+                return _services_contactService__WEBPACK_IMPORTED_MODULE_3__["default"].find(contactId);
 
               case 2:
                 _this.contact = _context.sent.data.data;
@@ -3289,7 +3289,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _services_companyService__WEBPACK_IMPORTED_MODULE_4__["CompanyService"].all();
+                return _services_companyService__WEBPACK_IMPORTED_MODULE_4__["default"].all();
 
               case 2:
                 _this2.companies = _context2.sent.data.data;
@@ -3312,7 +3312,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this3.isSaving = true;
                 _context3.next = 3;
-                return _services_contactService__WEBPACK_IMPORTED_MODULE_3__["ContactService"].update(_this3.$route.params.id, _this3.contact);
+                return _services_contactService__WEBPACK_IMPORTED_MODULE_3__["default"].update(_this3.$route.params.id, _this3.contact);
 
               case 3:
                 _this3.contact = _context3.sent.data.data;
@@ -6137,7 +6137,7 @@ var render = function() {
                 "fixed-header": "",
                 search: _vm.search,
                 headers: _vm.headers,
-                items: _vm.comapnies
+                items: _vm.companies
               },
               scopedSlots: _vm._u([
                 {
@@ -65516,20 +65516,71 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/services/batchService.js":
-/*!***********************************************!*\
-  !*** ./resources/js/services/batchService.js ***!
-  \***********************************************/
-/*! exports provided: BatchService */
+/***/ "./resources/js/services/apiService.js":
+/*!*********************************************!*\
+  !*** ./resources/js/services/apiService.js ***!
+  \*********************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BatchService", function() { return BatchService; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var ApiService = /*#__PURE__*/function () {
+  function ApiService() {
+    _classCallCheck(this, ApiService);
+
+    this.axios = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({});
+  }
+
+  _createClass(ApiService, [{
+    key: "get",
+    value: function get(route, params) {
+      return this.axios.get(route, params);
+    }
+  }, {
+    key: "put",
+    value: function put(route, data) {
+      return this.axios.put(route, data);
+    }
+  }, {
+    key: "post",
+    value: function post(route, data) {
+      return this.axios.post(route, data);
+    }
+  }]);
+
+  return ApiService;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (ApiService);
+
+/***/ }),
+
+/***/ "./resources/js/services/batchService.js":
+/*!***********************************************!*\
+  !*** ./resources/js/services/batchService.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/api */ "./resources/js/utils/api.js");
+/* harmony import */ var _apiService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./apiService */ "./resources/js/services/apiService.js");
 
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -65541,13 +65592,34 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-var BatchService = /*#__PURE__*/function () {
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var BatchService = /*#__PURE__*/function (_ApiService) {
+  _inherits(BatchService, _ApiService);
+
+  var _super = _createSuper(BatchService);
+
   function BatchService() {
     _classCallCheck(this, BatchService);
+
+    return _super.apply(this, arguments);
   }
 
-  _createClass(BatchService, null, [{
+  _createClass(BatchService, [{
     key: "all",
     value: function () {
       var _all = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -65556,7 +65628,7 @@ var BatchService = /*#__PURE__*/function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/batches/");
+                return this.get("/api/batches/");
 
               case 2:
                 return _context.abrupt("return", _context.sent);
@@ -65566,7 +65638,7 @@ var BatchService = /*#__PURE__*/function () {
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this);
       }));
 
       function all() {
@@ -65576,15 +65648,15 @@ var BatchService = /*#__PURE__*/function () {
       return all;
     }()
   }, {
-    key: "get",
+    key: "find",
     value: function () {
-      var _get = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(batchId) {
+      var _find = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(batchId) {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/batches/".concat(batchId), {
+                return this.get("/api/batches/".concat(batchId), {
                   batchId: batchId
                 });
 
@@ -65596,14 +65668,14 @@ var BatchService = /*#__PURE__*/function () {
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, this);
       }));
 
-      function get(_x) {
-        return _get.apply(this, arguments);
+      function find(_x) {
+        return _find.apply(this, arguments);
       }
 
-      return get;
+      return find;
     }()
   }, {
     key: "store",
@@ -65614,7 +65686,7 @@ var BatchService = /*#__PURE__*/function () {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].post("/api/batches", data);
+                return this.post("/api/batches", data);
 
               case 2:
                 return _context3.abrupt("return", _context3.sent);
@@ -65624,7 +65696,7 @@ var BatchService = /*#__PURE__*/function () {
                 return _context3.stop();
             }
           }
-        }, _callee3);
+        }, _callee3, this);
       }));
 
       function store(_x2) {
@@ -65636,7 +65708,9 @@ var BatchService = /*#__PURE__*/function () {
   }]);
 
   return BatchService;
-}();
+}(_apiService__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (new BatchService());
 
 /***/ }),
 
@@ -65644,16 +65718,17 @@ var BatchService = /*#__PURE__*/function () {
 /*!*************************************************!*\
   !*** ./resources/js/services/companyService.js ***!
   \*************************************************/
-/*! exports provided: CompanyService */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompanyService", function() { return CompanyService; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/api */ "./resources/js/utils/api.js");
+/* harmony import */ var _apiService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./apiService */ "./resources/js/services/apiService.js");
 
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -65665,13 +65740,34 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-var CompanyService = /*#__PURE__*/function () {
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var CompanyService = /*#__PURE__*/function (_ApiService) {
+  _inherits(CompanyService, _ApiService);
+
+  var _super = _createSuper(CompanyService);
+
   function CompanyService() {
     _classCallCheck(this, CompanyService);
+
+    return _super.apply(this, arguments);
   }
 
-  _createClass(CompanyService, null, [{
+  _createClass(CompanyService, [{
     key: "all",
     value: function () {
       var _all = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -65680,7 +65776,7 @@ var CompanyService = /*#__PURE__*/function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/companies/");
+                return this.get("/api/companies/");
 
               case 2:
                 return _context.abrupt("return", _context.sent);
@@ -65690,7 +65786,7 @@ var CompanyService = /*#__PURE__*/function () {
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this);
       }));
 
       function all() {
@@ -65708,7 +65804,7 @@ var CompanyService = /*#__PURE__*/function () {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].post("/api/companies", data);
+                return this.post("/api/companies", data);
 
               case 2:
                 return _context2.abrupt("return", _context2.sent);
@@ -65718,7 +65814,7 @@ var CompanyService = /*#__PURE__*/function () {
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, this);
       }));
 
       function create(_x) {
@@ -65728,15 +65824,15 @@ var CompanyService = /*#__PURE__*/function () {
       return create;
     }()
   }, {
-    key: "get",
+    key: "find",
     value: function () {
-      var _get = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(companyId) {
+      var _find = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(companyId) {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/companies/".concat(companyId));
+                return this.get("/api/companies/".concat(companyId));
 
               case 2:
                 return _context3.abrupt("return", _context3.sent);
@@ -65746,14 +65842,14 @@ var CompanyService = /*#__PURE__*/function () {
                 return _context3.stop();
             }
           }
-        }, _callee3);
+        }, _callee3, this);
       }));
 
-      function get(_x2) {
-        return _get.apply(this, arguments);
+      function find(_x2) {
+        return _find.apply(this, arguments);
       }
 
-      return get;
+      return find;
     }()
   }, {
     key: "update",
@@ -65764,7 +65860,7 @@ var CompanyService = /*#__PURE__*/function () {
             switch (_context4.prev = _context4.next) {
               case 0:
                 _context4.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].put("/api/companies/".concat(companyId), data);
+                return this.put("/api/companies/".concat(companyId), data);
 
               case 2:
                 return _context4.abrupt("return", _context4.sent);
@@ -65774,7 +65870,7 @@ var CompanyService = /*#__PURE__*/function () {
                 return _context4.stop();
             }
           }
-        }, _callee4);
+        }, _callee4, this);
       }));
 
       function update(_x3, _x4) {
@@ -65786,7 +65882,9 @@ var CompanyService = /*#__PURE__*/function () {
   }]);
 
   return CompanyService;
-}();
+}(_apiService__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (new CompanyService());
 
 /***/ }),
 
@@ -65794,16 +65892,17 @@ var CompanyService = /*#__PURE__*/function () {
 /*!*************************************************!*\
   !*** ./resources/js/services/contactService.js ***!
   \*************************************************/
-/*! exports provided: ContactService */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactService", function() { return ContactService; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/api */ "./resources/js/utils/api.js");
+/* harmony import */ var _apiService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./apiService */ "./resources/js/services/apiService.js");
 
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -65815,13 +65914,34 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-var ContactService = /*#__PURE__*/function () {
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var ContactService = /*#__PURE__*/function (_ApiService) {
+  _inherits(ContactService, _ApiService);
+
+  var _super = _createSuper(ContactService);
+
   function ContactService() {
     _classCallCheck(this, ContactService);
+
+    return _super.apply(this, arguments);
   }
 
-  _createClass(ContactService, null, [{
+  _createClass(ContactService, [{
     key: "all",
     value: function () {
       var _all = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -65830,7 +65950,7 @@ var ContactService = /*#__PURE__*/function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/contacts/");
+                return this.get("/api/contacts/");
 
               case 2:
                 return _context.abrupt("return", _context.sent);
@@ -65840,7 +65960,7 @@ var ContactService = /*#__PURE__*/function () {
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this);
       }));
 
       function all() {
@@ -65850,15 +65970,15 @@ var ContactService = /*#__PURE__*/function () {
       return all;
     }()
   }, {
-    key: "get",
+    key: "find",
     value: function () {
-      var _get = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(contactId) {
+      var _find = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(contactId) {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/contacts/".concat(contactId));
+                return this.get("/api/contacts/".concat(contactId));
 
               case 2:
                 return _context2.abrupt("return", _context2.sent);
@@ -65868,14 +65988,14 @@ var ContactService = /*#__PURE__*/function () {
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, this);
       }));
 
-      function get(_x) {
-        return _get.apply(this, arguments);
+      function find(_x) {
+        return _find.apply(this, arguments);
       }
 
-      return get;
+      return find;
     }()
   }, {
     key: "update",
@@ -65886,7 +66006,7 @@ var ContactService = /*#__PURE__*/function () {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].put("/api/contacts/".concat(contactId), data);
+                return this.put("/api/contacts/".concat(contactId), data);
 
               case 2:
                 return _context3.abrupt("return", _context3.sent);
@@ -65896,7 +66016,7 @@ var ContactService = /*#__PURE__*/function () {
                 return _context3.stop();
             }
           }
-        }, _callee3);
+        }, _callee3, this);
       }));
 
       function update(_x2, _x3) {
@@ -65908,7 +66028,9 @@ var ContactService = /*#__PURE__*/function () {
   }]);
 
   return ContactService;
-}();
+}(_apiService__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (new ContactService());
 
 /***/ }),
 
@@ -66019,56 +66141,6 @@ var state = {};
 var getters = {};
 var mutations = {};
 var actions = {};
-
-/***/ }),
-
-/***/ "./resources/js/utils/api.js":
-/*!***********************************!*\
-  !*** ./resources/js/utils/api.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var Api = /*#__PURE__*/function () {
-  function Api() {
-    _classCallCheck(this, Api);
-
-    this.axios = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({});
-  }
-
-  _createClass(Api, [{
-    key: "get",
-    value: function get(route, params) {
-      return this.axios.get(route, params);
-    }
-  }, {
-    key: "put",
-    value: function put(route, data) {
-      return this.axios.put(route, data);
-    }
-  }, {
-    key: "post",
-    value: function post(route, data) {
-      return this.axios.post(route, data);
-    }
-  }]);
-
-  return Api;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (new Api());
 
 /***/ }),
 

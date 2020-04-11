@@ -1,20 +1,22 @@
-import Api from '../utils/api';
+import ApiService from './apiService';
 
-export class BatchService {
-    static async all() {
-        return await Api.get(`/api/batches/`);
+class BatchService extends ApiService {
+    async all() {
+        return await this.get(`/api/batches/`);
     }
 
-    static async get(batchId) {
-        return await Api.get(`/api/batches/${batchId}`, {
+    async find(batchId) {
+        return await this.get(`/api/batches/${batchId}`, {
             batchId
         });
     }
 
-    static async store(data) {
-        return await Api.post(
+    async store(data) {
+        return await this.post(
             `/api/batches`,
             data
         );
     }
 }
+
+export default new BatchService();

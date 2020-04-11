@@ -91,8 +91,8 @@
 <script>
     import SavingChip from "../components/Dumb/VSavingChip";
     import SavedChip from "../components/Dumb/VSavedChip";
-    import {ContactService} from "../services/contactService";
-    import {CompanyService} from "../services/companyService";
+    import ContactService from "../services/contactService";
+    import CompanyService from "../services/companyService";
 
     export default {
         name: 'EditContact',
@@ -113,7 +113,7 @@
         },
         methods: {
             async fetchContact(contactId) {
-                this.contact = (await ContactService.get(contactId)).data.data;
+                this.contact = (await ContactService.find(contactId)).data.data;
             },
             async fetchCompanies() {
                 this.companies = (await CompanyService.all()).data.data;

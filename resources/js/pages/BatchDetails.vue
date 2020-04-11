@@ -19,7 +19,7 @@
 
 <script>
     import CreateBatchDialog from "../components/Dialogs/CreateBatchDialog";
-    import {BatchService} from "../services/batchService";
+    import BatchService from "../services/batchService";
     import SuccessBatchLog from "../components/Dialogs/SuccessBatchLog";
     import ErrorBatchLog from "../components/Dialogs/ErrorBatchLog";
     export default {
@@ -38,7 +38,7 @@
         methods: {
             async fetchBatch() {
                 this.isLoading = true;
-                this.batch = (await BatchService.get(this.$route.params.id)).data.data;
+                this.batch = (await BatchService.find(this.$route.params.id)).data.data;
                 this.isLoading = false;
             }
         }
