@@ -39,7 +39,8 @@ class Batch extends Model
     /**
      * @return void
      */
-    public function process() {
+    public function process()
+    {
         ProcessBatch::dispatchNow($this);
     }
 
@@ -47,18 +48,21 @@ class Batch extends Model
      * @param array $options
      * @return bool|void
      */
-    public function save(array $options = []) {
-        parent::save($options);
-
-        if (!$this->id) {
-            $this->process();
+    public function save(array $options = [])
+    {
+        if ($this->id) {
+            return parent::save($options);
         }
+
+        parent::save($options);
+        $this->process();
     }
 
     /**
      * @return boolean
      */
-    public function markAsProcessed() {
+    public function markAsProcessed()
+    {
         $this->is_processed = true;
         return $this->save();
     }
@@ -67,7 +71,8 @@ class Batch extends Model
      * @param string $contactEmail
      * @return Model
      */
-    public function logImported(string $contactEmail) {
+    public function logImported(string $contactEmail)
+    {
         return $this->logs()->create([
             'contact_email' => $contactEmail,
             'status' => BatchLogStatus::IMPORTED,
@@ -78,7 +83,8 @@ class Batch extends Model
      * @param string $contactEmail
      * @return Model
      */
-    public function logDuplicate(string $contactEmail) {
+    public function logDuplicate(string $contactEmail)
+    {
         return $this->logs()->create([
             'contact_email' => $contactEmail,
             'status' => BatchLogStatus::DUPLICATE,
@@ -90,7 +96,8 @@ class Batch extends Model
      * @param string $errorMessage
      * @return Model
      */
-    public function logError(string $contactEmail = null, string $errorMessage = null) {
+    public function logError(string $contactEmail = null, string $errorMessage = null)
+    {
         return $this->logs()->create([
             'contact_email' => $contactEmail,
             'status' => BatchLogStatus::ERROR,
