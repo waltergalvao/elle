@@ -41,7 +41,7 @@
 
 <script>
     import Papa from 'papaparse'
-    import {BatchService} from "../../services/batchService";
+    import BatchService from "../../services/batchService";
 
     export default {
         name: 'CreateBatchDialog',

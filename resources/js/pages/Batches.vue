@@ -22,7 +22,6 @@
                     <thead>
                     <tr>
                         <th class="text-left">Name</th>
-                        <th class="text-left">Contacts</th>
                         <th class="text-left">Status</th>
                         <th class="text-right">Action</th>
                     </tr>
@@ -30,7 +29,6 @@
                     <tbody>
                     <tr v-for="batch in batches.data" :key="batch.id">
                         <td>{{ batch.name }}</td>
-                        <td>5</td>
                         <td>
                             <v-chip color="green lighten-1" outlined v-if="batch.is_processed">Processed</v-chip>
                             <v-chip color="grey" outlined v-else>Processing</v-chip>

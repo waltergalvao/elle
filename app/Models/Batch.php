@@ -49,7 +49,10 @@ class Batch extends Model
      */
     public function save(array $options = []) {
         parent::save($options);
-        $this->process();
+
+        if (!$this->id) {
+            $this->process();
+        }
     }
 
     /**
