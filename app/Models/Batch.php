@@ -40,7 +40,7 @@ class Batch extends Model
      * @return void
      */
     public function process() {
-        ProcessBatch::dispatch($this);
+        ProcessBatch::dispatchNow($this);
     }
 
     /**
