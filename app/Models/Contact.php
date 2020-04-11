@@ -18,6 +18,7 @@ class Contact extends Model
         'last_name',
         'email_provider',
         'linkedin_url',
+        'company_id',
         'is_work_email',
         'email',
         'notes',

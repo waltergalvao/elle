@@ -4,6 +4,7 @@ import Contacts from "../pages/Contacts";
 import Companies from "../pages/Companies";
 import EditContact from "../pages/EditContact";
 import EditCompany from "../pages/EditCompany";
+import AddCompany from "../pages/AddCompany";
 
 export default [
     {
@@ -30,6 +31,11 @@ export default [
         path: '/companies',
         name: 'companies',
         component: Companies,
+    },
+    {
+        path: '/companies/add',
+        name: 'companies.add',
+        component: AddCompany,
     },
     {
         path: '/companies/:id',

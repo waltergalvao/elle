@@ -16,6 +16,7 @@
                     single-line
                     hide-details
                 ></v-text-field>
+                <v-btn color="primary" depressed class="ml-4" :to="{ name: 'companies.add' }">Add</v-btn>
             </v-toolbar>
 
             <v-data-table

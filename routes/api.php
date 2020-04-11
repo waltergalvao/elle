@@ -16,10 +16,11 @@ Route::group([
     // Contacts
     Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
     Route::get('contacts/{companyId}', [ContactController::class, 'get'])->name('contacts.get');
-    Route::put('contacts/{companyId}', [ContactController::class, 'update'])->name('contacts.get');
+    Route::put('contacts/{companyId}', [ContactController::class, 'update'])->name('contacts.update');
 
     // Companies
     Route::get('companies', [CompanyController::class, 'index'])->name('companies.index');
+    Route::post('companies', [CompanyController::class, 'store'])->name('companies.store');
     Route::get('companies/{companyId}', [CompanyController::class, 'get'])->name('companies.get');
-    Route::put('companies/{companyId}', [CompanyController::class, 'update'])->name('companies.get');
+    Route::put('companies/{companyId}', [CompanyController::class, 'update'])->name('companies.update');
 });

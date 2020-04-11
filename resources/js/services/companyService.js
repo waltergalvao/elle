@@ -5,6 +5,10 @@ export class CompanyService {
         return await Api.get(`/api/companies/`);
     }
 
+    static async create(data) {
+        return await Api.post(`/api/companies`, data);
+    }
+
     static async get(companyId) {
         return await Api.get(`/api/companies/${companyId}`);
     }
