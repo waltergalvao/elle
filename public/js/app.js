@@ -6121,11 +6121,12 @@ var render = function() {
                     staticClass: "ml-4",
                     attrs: {
                       color: "primary",
+                      large: "",
                       depressed: "",
                       to: { name: "companies.add" }
                     }
                   },
-                  [_vm._v("Add")]
+                  [_vm._v("CREATE COMPANY")]
                 )
               ],
               1
