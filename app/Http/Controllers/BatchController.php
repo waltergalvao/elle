@@ -40,7 +40,6 @@ class BatchController extends Controller
         ]);
 
         $batch->save();
-        $batch->process();
 
         return new BatchResource($batch);
     }

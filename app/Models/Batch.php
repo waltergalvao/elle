@@ -44,6 +44,15 @@ class Batch extends Model
     }
 
     /**
+     * @param array $options
+     * @return bool|void
+     */
+    public function save(array $options = []) {
+        parent::save($options);
+        $this->process();
+    }
+
+    /**
      * @return boolean
      */
     public function markAsProcessed() {
