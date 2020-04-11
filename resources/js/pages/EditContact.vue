@@ -20,7 +20,7 @@
                 <v-img
                     class="white--text align-end"
                     height="200px"
-                    src="/img/contact.jpg"
+                    src="/img/contact.jpeg"
                 >
                     <v-card-title>
                         {{ contact.name }}
@@ -36,17 +36,43 @@
 
                     <v-text-field
                         @change="save('name', $event)"
-                        v-model="contact.name"
+                        v-model="contact.first_name"
                         label="Name"
                     ></v-text-field>
 
                     <v-text-field
-                        @change="save('domain', $event)"
-                        v-model="contact.domain"
-                        label="Domain"
+                        @change="save('name', $event)"
+                        v-model="contact.last_name"
+                        label="Name"
                     ></v-text-field>
+                </v-card-text>
+            </v-card>
 
+            <div class="overline mt-8">Social Medias</div>
+            <v-card
+                class="mx-auto mt-3"
+                elevation="2"
+            >
+                <v-card-text>
+                    <v-text-field
+                        @change="save('name', $event)"
+                        v-model="contact.linkedin_url"
+                        label="LinkedIn"
+                    ></v-text-field>
+                </v-card-text>
+            </v-card>
 
+            <div class="overline mt-8">Extra</div>
+            <v-card
+                class="mx-auto mt-3"
+                elevation="2"
+            >
+                <v-card-text>
+                    <v-textarea
+                        v-model="contact.notes"
+                        @change="save('name', $event)"
+                        label="Notes"
+                    ></v-textarea>
                 </v-card-text>
             </v-card>
         </template>
@@ -54,12 +80,12 @@
 </template>
 
 <script>
-    import {CompanyService} from "../services/contactService";
     import SavingChip from "../components/Dumb/VSavingChip";
     import SavedChip from "../components/Dumb/VSavedChip";
+    import {ContactService} from "../services/contactService";
 
     export default {
-        name: 'EditCompany',
+        name: 'EditContact',
         components: {SavedChip, SavingChip},
         data() {
             return {
@@ -69,12 +95,12 @@
             }
         },
         created() {
-            this.fetchContacts();
+            this.fetchContact(this.$route.params.id);
         },
         methods: {
-            async fetchContacts() {
+            async fetchContact(contactId) {
                 this.isLoading = true;
-                this.contact = (await ContactService.get(this.$route.params.id)).data.data;
+                this.contact = (await ContactService.get(contactId)).data.data;
                 this.isLoading = false;
             },
             async save(event, test) {

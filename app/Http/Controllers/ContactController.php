@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\ContactCollection;
+use App\Http\Resources\ContactResource;
 use App\Models\Contact;
+use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
@@ -21,8 +23,8 @@ class ContactController extends Controller
     }
 
     /**
-     * @param string $companyId
-     * @return CompanyResource
+     * @param string $contactId
+     * @return ContactResource
      */
     public function get(string $contactId)
     {
@@ -32,11 +34,11 @@ class ContactController extends Controller
     }
 
     /**
-     * @param string $companyId
+     * @param string $contactId
      * @param Request $request
      * @return ContactResource
      */
-    public function update(string $companyId, Request $request)
+    public function update(string $contactId, Request $request)
     {
         $contact = Contact::findOrFail($contactId);
         $contact->fill($request->all());

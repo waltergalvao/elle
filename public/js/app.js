@@ -2965,9 +2965,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_contactService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/contactService */ "./resources/js/services/contactService.js");
-/* harmony import */ var _components_Dumb_VSavingChip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Dumb/VSavingChip */ "./resources/js/components/Dumb/VSavingChip.vue");
-/* harmony import */ var _components_Dumb_VSavedChip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Dumb/VSavedChip */ "./resources/js/components/Dumb/VSavedChip.vue");
+/* harmony import */ var _components_Dumb_VSavingChip__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Dumb/VSavingChip */ "./resources/js/components/Dumb/VSavingChip.vue");
+/* harmony import */ var _components_Dumb_VSavedChip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Dumb/VSavedChip */ "./resources/js/components/Dumb/VSavedChip.vue");
+/* harmony import */ var _services_contactService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/contactService */ "./resources/js/services/contactService.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -3029,14 +3029,40 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'EditCompany',
+  name: 'EditContact',
   components: {
-    SavedChip: _components_Dumb_VSavedChip__WEBPACK_IMPORTED_MODULE_3__["default"],
-    SavingChip: _components_Dumb_VSavingChip__WEBPACK_IMPORTED_MODULE_2__["default"]
+    SavedChip: _components_Dumb_VSavedChip__WEBPACK_IMPORTED_MODULE_2__["default"],
+    SavingChip: _components_Dumb_VSavingChip__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -3046,10 +3072,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   created: function created() {
-    this.fetchContacts();
+    this.fetchContact(this.$route.params.id);
   },
   methods: {
-    fetchContacts: function fetchContacts() {
+    fetchContact: function fetchContact(contactId) {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -3059,7 +3085,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this.isLoading = true;
                 _context.next = 3;
-                return ContactService.get(_this.$route.params.id);
+                return _services_contactService__WEBPACK_IMPORTED_MODULE_3__["ContactService"].get(contactId);
 
               case 3:
                 _this.contact = _context.sent.data.data;
@@ -3083,7 +3109,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this2.isSaving = true;
                 _context2.next = 3;
-                return ContactService.update(_this2.$route.params.id, _this2.contact);
+                return _services_contactService__WEBPACK_IMPORTED_MODULE_3__["ContactService"].update(_this2.$route.params.id, _this2.contact);
 
               case 3:
                 _this2.contact = _context2.sent.data.data;
@@ -5823,7 +5849,7 @@ var render = function() {
                           attrs: {
                             icon: "",
                             to: {
-                              name: "contact.edit",
+                              name: "contacts.edit",
                               params: { id: item.id }
                             },
                             exact: ""
@@ -6131,7 +6157,7 @@ var render = function() {
                   "v-img",
                   {
                     staticClass: "white--text align-end",
-                    attrs: { height: "200px", src: "/img/contact.jpg" }
+                    attrs: { height: "200px", src: "/img/contact.jpeg" }
                   },
                   [
                     _c(
@@ -6171,27 +6197,91 @@ var render = function() {
                         }
                       },
                       model: {
-                        value: _vm.contact.name,
+                        value: _vm.contact.first_name,
                         callback: function($$v) {
-                          _vm.$set(_vm.contact, "name", $$v)
+                          _vm.$set(_vm.contact, "first_name", $$v)
                         },
-                        expression: "contact.name"
+                        expression: "contact.first_name"
                       }
                     }),
                     _vm._v(" "),
                     _c("v-text-field", {
-                      attrs: { label: "Domain" },
+                      attrs: { label: "Name" },
                       on: {
                         change: function($event) {
-                          return _vm.save("domain", $event)
+                          return _vm.save("name", $event)
                         }
                       },
                       model: {
-                        value: _vm.contact.domain,
+                        value: _vm.contact.last_name,
                         callback: function($$v) {
-                          _vm.$set(_vm.contact, "domain", $$v)
+                          _vm.$set(_vm.contact, "last_name", $$v)
                         },
-                        expression: "contact.domain"
+                        expression: "contact.last_name"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "overline mt-8" }, [
+              _vm._v("Social Medias")
+            ]),
+            _vm._v(" "),
+            _c(
+              "v-card",
+              { staticClass: "mx-auto mt-3", attrs: { elevation: "2" } },
+              [
+                _c(
+                  "v-card-text",
+                  [
+                    _c("v-text-field", {
+                      attrs: { label: "LinkedIn" },
+                      on: {
+                        change: function($event) {
+                          return _vm.save("name", $event)
+                        }
+                      },
+                      model: {
+                        value: _vm.contact.linkedin_url,
+                        callback: function($$v) {
+                          _vm.$set(_vm.contact, "linkedin_url", $$v)
+                        },
+                        expression: "contact.linkedin_url"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "overline mt-8" }, [_vm._v("Extra")]),
+            _vm._v(" "),
+            _c(
+              "v-card",
+              { staticClass: "mx-auto mt-3", attrs: { elevation: "2" } },
+              [
+                _c(
+                  "v-card-text",
+                  [
+                    _c("v-textarea", {
+                      attrs: { label: "Notes" },
+                      on: {
+                        change: function($event) {
+                          return _vm.save("name", $event)
+                        }
+                      },
+                      model: {
+                        value: _vm.contact.notes,
+                        callback: function($$v) {
+                          _vm.$set(_vm.contact, "notes", $$v)
+                        },
+                        expression: "contact.notes"
                       }
                     })
                   ],

@@ -36,7 +36,7 @@
                 <template v-slot:item.actions="{ item }">
                     <v-btn
                         icon
-                        :to="{ name: 'contact.edit', params: {id: item.id}}"
+                        :to="{ name: 'contacts.edit', params: {id: item.id}}"
                         exact
                     >
                         <v-icon>mdi-pencil</v-icon>
