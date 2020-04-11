@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Resources\CompanyCollection;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
@@ -26,6 +27,18 @@ class CompanyController extends Controller
         $batch = Company::with('contacts')->find($companyId);
 
         return new CompanyResource($batch);
+    }
+
+    /**
+     * @param StoreCompanyRequest $request
+     * @return CompanyResource
+     */
+    public function store(StoreCompanyRequest $request)
+    {
+        $company = new Company($request->all());
+        $company->save();
+
+        return new CompanyResource($company);
     }
 
     /**

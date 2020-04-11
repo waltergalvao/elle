@@ -45,6 +45,15 @@
                         v-model="contact.last_name"
                         label="Name"
                     ></v-text-field>
+
+                    <v-select
+                        :items="companies"
+                        label="Company"
+                        v-model="contact.company_id"
+                        item-text="name"
+                        item-value="id"
+                        @change="save('company_id', $event)"
+                    ></v-select>
                 </v-card-text>
             </v-card>
 
@@ -83,6 +92,7 @@
     import SavingChip from "../components/Dumb/VSavingChip";
     import SavedChip from "../components/Dumb/VSavedChip";
     import {ContactService} from "../services/contactService";
+    import {CompanyService} from "../services/companyService";
 
     export default {
         name: 'EditContact',
@@ -91,17 +101,22 @@
             return {
                 isLoading: true,
                 contact: {},
+                companies: [],
                 isSaving: null,
             }
         },
         created() {
+            this.isLoading = true;
             this.fetchContact(this.$route.params.id);
+            this.fetchCompanies();
+            this.isLoading = false;
         },
         methods: {
             async fetchContact(contactId) {
-                this.isLoading = true;
                 this.contact = (await ContactService.get(contactId)).data.data;
-                this.isLoading = false;
+            },
+            async fetchCompanies() {
+                this.companies = (await CompanyService.all()).data.data;
             },
             async save(event, test) {
                 this.isSaving = true;

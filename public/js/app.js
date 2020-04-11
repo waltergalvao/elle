@@ -2297,6 +2297,173 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/AddCompany.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/AddCompany.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_companyService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/companyService */ "./resources/js/services/companyService.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'AddCompany',
+  data: function data() {
+    return {
+      isLoading: false,
+      company: {},
+      isSaving: null
+    };
+  },
+  methods: {
+    save: function save() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.$refs.name.validate(true);
+
+                if (!_this.company.name) {
+                  _context.next = 7;
+                  break;
+                }
+
+                _this.isLoading = true;
+                _context.next = 5;
+                return _services_companyService__WEBPACK_IMPORTED_MODULE_1__["CompanyService"].create(_this.company);
+
+              case 5:
+                _this.company = _context.sent.data.data;
+
+                _this.$router.push({
+                  name: 'companies'
+                });
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/BatchDetails.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/BatchDetails.vue?vue&type=script&lang=js& ***!
@@ -2526,6 +2693,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
 //
 //
 //
@@ -2968,6 +3136,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Dumb_VSavingChip__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Dumb/VSavingChip */ "./resources/js/components/Dumb/VSavingChip.vue");
 /* harmony import */ var _components_Dumb_VSavedChip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Dumb/VSavedChip */ "./resources/js/components/Dumb/VSavedChip.vue");
 /* harmony import */ var _services_contactService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/contactService */ "./resources/js/services/contactService.js");
+/* harmony import */ var _services_companyService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/companyService */ "./resources/js/services/companyService.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -3055,6 +3224,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -3068,11 +3247,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       isLoading: true,
       contact: {},
+      companies: [],
       isSaving: null
     };
   },
   created: function created() {
+    this.isLoading = true;
     this.fetchContact(this.$route.params.id);
+    this.fetchCompanies();
+    this.isLoading = false;
   },
   methods: {
     fetchContact: function fetchContact(contactId) {
@@ -3083,15 +3266,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this.isLoading = true;
-                _context.next = 3;
+                _context.next = 2;
                 return _services_contactService__WEBPACK_IMPORTED_MODULE_3__["ContactService"].get(contactId);
 
-              case 3:
+              case 2:
                 _this.contact = _context.sent.data.data;
-                _this.isLoading = false;
 
-              case 5:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -3099,7 +3280,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    save: function save(event, test) {
+    fetchCompanies: function fetchCompanies() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
@@ -3107,20 +3288,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _this2.isSaving = true;
-                _context2.next = 3;
-                return _services_contactService__WEBPACK_IMPORTED_MODULE_3__["ContactService"].update(_this2.$route.params.id, _this2.contact);
+                _context2.next = 2;
+                return _services_companyService__WEBPACK_IMPORTED_MODULE_4__["CompanyService"].all();
+
+              case 2:
+                _this2.companies = _context2.sent.data.data;
 
               case 3:
-                _this2.contact = _context2.sent.data.data;
-                _this2.isSaving = false;
-
-              case 5:
               case "end":
                 return _context2.stop();
             }
           }
         }, _callee2);
+      }))();
+    },
+    save: function save(event, test) {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this3.isSaving = true;
+                _context3.next = 3;
+                return _services_contactService__WEBPACK_IMPORTED_MODULE_3__["ContactService"].update(_this3.$route.params.id, _this3.contact);
+
+              case 3:
+                _this3.contact = _context3.sent.data.data;
+                _this3.isSaving = false;
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
       }))();
     }
   }
@@ -5451,6 +5654,231 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/AddCompany.vue?vue&type=template&id=2ed6b8e5&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/AddCompany.vue?vue&type=template&id=2ed6b8e5& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "mx-auto mt-2", staticStyle: { "max-width": "600px" } },
+    [
+      _vm.isLoading
+        ? [
+            _c(
+              "v-card",
+              {
+                staticClass: "mx-auto",
+                attrs: { "max-width": "344", outlined: "" }
+              },
+              [_c("v-skeleton-loader", { attrs: { type: "card" } })],
+              1
+            )
+          ]
+        : [
+            _c(
+              "v-card",
+              { staticClass: "mx-auto", attrs: { elevation: "2" } },
+              [
+                _c(
+                  "v-img",
+                  {
+                    staticClass: "white--text align-end",
+                    attrs: { height: "200px", src: "/img/company.jpg" }
+                  },
+                  [
+                    _c("v-card-title", [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.company.name) +
+                          "\n                "
+                      )
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-card-text",
+                  [
+                    _c("div", { staticClass: "overline mb-4" }, [
+                      _vm._v("Photo by Juhasz Imre from Pexels")
+                    ]),
+                    _vm._v(" "),
+                    _c("v-text-field", {
+                      ref: "name",
+                      attrs: {
+                        rules: [
+                          function(value) {
+                            return !!value || "Please fill this field"
+                          }
+                        ],
+                        label: "Name"
+                      },
+                      model: {
+                        value: _vm.company.name,
+                        callback: function($$v) {
+                          _vm.$set(_vm.company, "name", $$v)
+                        },
+                        expression: "company.name"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("v-text-field", {
+                      attrs: { label: "Domain" },
+                      model: {
+                        value: _vm.company.domain,
+                        callback: function($$v) {
+                          _vm.$set(_vm.company, "domain", $$v)
+                        },
+                        expression: "company.domain"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "overline mt-8" }, [
+              _vm._v("Social Medias")
+            ]),
+            _vm._v(" "),
+            _c(
+              "v-card",
+              { staticClass: "mx-auto mt-3", attrs: { elevation: "2" } },
+              [
+                _c(
+                  "v-card-text",
+                  [
+                    _c(
+                      "v-row",
+                      [
+                        _c(
+                          "v-col",
+                          { staticClass: "py-0", attrs: { md: "6", sm: "12" } },
+                          [
+                            _c("v-text-field", {
+                              attrs: { label: "LinkedIn" },
+                              model: {
+                                value: _vm.company.linkedin_url,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.company, "linkedin_url", $$v)
+                                },
+                                expression: "company.linkedin_url"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-col",
+                          { staticClass: "py-0", attrs: { md: "6", sm: "12" } },
+                          [
+                            _c("v-text-field", {
+                              attrs: { label: "Facebook" },
+                              model: {
+                                value: _vm.company.facebook_url,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.company, "facebook_url", $$v)
+                                },
+                                expression: "company.facebook_url"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-row",
+                      [
+                        _c(
+                          "v-col",
+                          { staticClass: "py-0", attrs: { md: "6", sm: "12" } },
+                          [
+                            _c("v-text-field", {
+                              attrs: { label: "Instagram" },
+                              model: {
+                                value: _vm.company.instagram_url,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.company, "instagram_url", $$v)
+                                },
+                                expression: "company.instagram_url"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-col",
+                          { staticClass: "py-0", attrs: { md: "6", sm: "12" } },
+                          [
+                            _c("v-text-field", {
+                              attrs: { label: "Twitter" },
+                              model: {
+                                value: _vm.company.twitter_url,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.company, "twitter_url", $$v)
+                                },
+                                expression: "company.twitter_url"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "mt-8 text-right" },
+              [
+                _c(
+                  "v-btn",
+                  {
+                    attrs: { depressed: "", large: "", color: "primary" },
+                    on: { click: _vm.save }
+                  },
+                  [_vm._v("\n                SAVE\n            ")]
+                )
+              ],
+              1
+            )
+          ]
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/BatchDetails.vue?vue&type=template&id=432ed89e&":
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/BatchDetails.vue?vue&type=template&id=432ed89e& ***!
@@ -5685,7 +6113,21 @@ var render = function() {
                     },
                     expression: "search"
                   }
-                })
+                }),
+                _vm._v(" "),
+                _c(
+                  "v-btn",
+                  {
+                    staticClass: "ml-4",
+                    attrs: {
+                      color: "primary",
+                      large: "",
+                      depressed: "",
+                      to: { name: "companies.add" }
+                    }
+                  },
+                  [_vm._v("CREATE COMPANY")]
+                )
               ],
               1
             ),
@@ -6218,6 +6660,27 @@ var render = function() {
                           _vm.$set(_vm.contact, "last_name", $$v)
                         },
                         expression: "contact.last_name"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("v-select", {
+                      attrs: {
+                        items: _vm.companies,
+                        label: "Company",
+                        "item-text": "name",
+                        "item-value": "id"
+                      },
+                      on: {
+                        change: function($event) {
+                          return _vm.save("company_id", $event)
+                        }
+                      },
+                      model: {
+                        value: _vm.contact.company_id,
+                        callback: function($$v) {
+                          _vm.$set(_vm.contact, "company_id", $$v)
+                        },
+                        expression: "contact.company_id"
                       }
                     })
                   ],
@@ -64495,6 +64958,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/AddCompany.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/pages/AddCompany.vue ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AddCompany_vue_vue_type_template_id_2ed6b8e5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddCompany.vue?vue&type=template&id=2ed6b8e5& */ "./resources/js/pages/AddCompany.vue?vue&type=template&id=2ed6b8e5&");
+/* harmony import */ var _AddCompany_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddCompany.vue?vue&type=script&lang=js& */ "./resources/js/pages/AddCompany.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AddCompany_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AddCompany_vue_vue_type_template_id_2ed6b8e5___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AddCompany_vue_vue_type_template_id_2ed6b8e5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/AddCompany.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/AddCompany.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/pages/AddCompany.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompany_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AddCompany.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/AddCompany.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompany_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/AddCompany.vue?vue&type=template&id=2ed6b8e5&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/pages/AddCompany.vue?vue&type=template&id=2ed6b8e5& ***!
+  \**************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompany_vue_vue_type_template_id_2ed6b8e5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./AddCompany.vue?vue&type=template&id=2ed6b8e5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/AddCompany.vue?vue&type=template&id=2ed6b8e5&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompany_vue_vue_type_template_id_2ed6b8e5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddCompany_vue_vue_type_template_id_2ed6b8e5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/BatchDetails.vue":
 /*!*********************************************!*\
   !*** ./resources/js/pages/BatchDetails.vue ***!
@@ -64918,297 +65450,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./resources/js/router/routes.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes */ "./resources/js/router/routes.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-
- // The middleware for every page of the application.
-
-var globalMiddleware = []; // Load middleware modules dynamically.
-
-var routeMiddleware = resolveMiddleware(__webpack_require__("./resources/js/router/middlewares sync .*\\.js$"));
-var router = createRouter();
-/* harmony default export */ __webpack_exports__["default"] = (router);
-/**
- * Create a new router instance.
- *
- * @return {Router}
- */
-
-function createRouter() {
-  var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
-    scrollBehavior: scrollBehavior,
-    mode: 'history',
-    routes: _routes__WEBPACK_IMPORTED_MODULE_1__["default"]
-  });
-  router.beforeEach(beforeEach);
-  router.afterEach(afterEach);
-  return router;
-}
-/**
- * Global router guard.
- *
- * @param {Route} to
- * @param {Route} from
- * @param {Function} next
- */
-
-
-function beforeEach(_x, _x2, _x3) {
-  return _beforeEach.apply(this, arguments);
-}
-/**
- * Global after hook.
- *
- * @param {Route} to
- * @param {Route} from
- */
-
-
-function _beforeEach() {
-  _beforeEach = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(to, from, next) {
-    var components, middleware;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            components = [];
-            _context.prev = 1;
-            _context.next = 4;
-            return resolveComponents(router.getMatchedComponents(_objectSpread({}, to)));
-
-          case 4:
-            components = _context.sent;
-            _context.next = 12;
-            break;
-
-          case 7:
-            _context.prev = 7;
-            _context.t0 = _context["catch"](1);
-
-            if (!/^Loading( CSS)? chunk (\d)+ failed\./.test(_context.t0.message)) {
-              _context.next = 12;
-              break;
-            }
-
-            window.location.reload(true);
-            return _context.abrupt("return");
-
-          case 12:
-            if (!(components.length === 0)) {
-              _context.next = 14;
-              break;
-            }
-
-            return _context.abrupt("return", next());
-
-          case 14:
-            // Get the middleware for all the matched components.
-            middleware = getMiddleware(components); // Call each middleware.
-
-            callMiddleware(middleware, to, from, function () {
-              next.apply(void 0, arguments);
-            });
-
-          case 16:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee, null, [[1, 7]]);
-  }));
-  return _beforeEach.apply(this, arguments);
-}
-
-function afterEach(_x4, _x5) {
-  return _afterEach.apply(this, arguments);
-}
-/**
- * Call each middleware.
- *
- * @param {Array} middleware
- * @param {Route} to
- * @param {Route} from
- * @param {Function} next
- */
-
-
-function _afterEach() {
-  _afterEach = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(to, from) {
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2);
-  }));
-  return _afterEach.apply(this, arguments);
-}
-
-function callMiddleware(middleware, to, from, next) {
-  var stack = middleware.reverse();
-
-  var _next = function _next() {
-    // Stop if "_next" was called with an argument or the stack is empty.
-    if (arguments.length > 0 || stack.length === 0) {
-      return next.apply(void 0, arguments);
-    }
-
-    var middleware = stack.pop();
-
-    if (typeof middleware === 'function') {
-      middleware(to, from, _next);
-    } else if (routeMiddleware[middleware]) {
-      routeMiddleware[middleware](to, from, _next);
-    } else {
-      throw Error("Undefined middleware [".concat(middleware, "]"));
-    }
-  };
-
-  _next();
-}
-/**
- * Resolve async components.
- *
- * @param  {Array} components
- * @return {Array}
- */
-
-
-function resolveComponents(components) {
-  return Promise.all(components.map(function (component) {
-    return typeof component === 'function' ? component() : component;
-  }));
-}
-/**
- * Merge the the global middleware with the components middleware.
- *
- * @param  {Array} components
- * @return {Array}
- */
-
-
-function getMiddleware(components) {
-  var middleware = [].concat(globalMiddleware);
-  components.filter(function (c) {
-    return c.middleware;
-  }).forEach(function (component) {
-    if (Array.isArray(component.middleware)) {
-      middleware.push.apply(middleware, _toConsumableArray(component.middleware));
-    } else {
-      middleware.push(component.middleware);
-    }
-  });
-  return middleware;
-}
-/**
- * Scroll Behavior
- *
- * @link https://router.vuejs.org/en/advanced/scroll-behavior.html
- *
- * @param  {Route} to
- * @param  {Route} from
- * @param  {Object|undefined} savedPosition
- * @return {Object}
- */
-
-
-function scrollBehavior(to, from, savedPosition) {
-  if (savedPosition) {
-    return savedPosition;
-  }
-
-  if (to.hash) {
-    return {
-      selector: to.hash
-    };
-  }
-
-  var _router$getMatchedCom = router.getMatchedComponents(_objectSpread({}, to)).slice(-1),
-      _router$getMatchedCom2 = _slicedToArray(_router$getMatchedCom, 1),
-      component = _router$getMatchedCom2[0];
-
-  if (component && component.scrollToTop === false) {
-    return {};
-  }
-
-  return {
-    x: 0,
-    y: 0
-  };
-}
-/**
- * @param  {Object} requireContext
- * @return {Object}
- */
-
-
-function resolveMiddleware(requireContext) {
-  return requireContext.keys().map(function (file) {
-    return [file.replace(/(^.\/)|(\.js$)/g, ''), requireContext(file)];
-  }).reduce(function (guards, _ref) {
-    var _ref2 = _slicedToArray(_ref, 2),
-        name = _ref2[0],
-        guard = _ref2[1];
-
-    return _objectSpread({}, guards, _defineProperty({}, name, guard["default"]));
-  }, {});
-}
-
-/***/ }),
-
-/***/ "./resources/js/router/middlewares sync .*\\.js$":
-/*!*******************************************************************!*\
-  !*** ./resources/js/router/middlewares sync nonrecursive .*\.js$ ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "./resources/js/router/middlewares sync .*\\.js$";
+/* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  mode: 'history',
+  routes: _routes__WEBPACK_IMPORTED_MODULE_0__["default"]
+}));
 
 /***/ }),
 
@@ -65227,6 +65476,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Companies__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/Companies */ "./resources/js/pages/Companies.vue");
 /* harmony import */ var _pages_EditContact__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/EditContact */ "./resources/js/pages/EditContact.vue");
 /* harmony import */ var _pages_EditCompany__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/EditCompany */ "./resources/js/pages/EditCompany.vue");
+/* harmony import */ var _pages_AddCompany__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/AddCompany */ "./resources/js/pages/AddCompany.vue");
+
 
 
 
@@ -65253,6 +65504,10 @@ __webpack_require__.r(__webpack_exports__);
   path: '/companies',
   name: 'companies',
   component: _pages_Companies__WEBPACK_IMPORTED_MODULE_3__["default"]
+}, {
+  path: '/companies/add',
+  name: 'companies.add',
+  component: _pages_AddCompany__WEBPACK_IMPORTED_MODULE_6__["default"]
 }, {
   path: '/companies/:id',
   name: 'companies.edit',
@@ -65445,15 +65700,15 @@ var CompanyService = /*#__PURE__*/function () {
       return all;
     }()
   }, {
-    key: "get",
+    key: "create",
     value: function () {
-      var _get = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(companyId) {
+      var _create = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(data) {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/companies/".concat(companyId));
+                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].post("/api/companies", data);
 
               case 2:
                 return _context2.abrupt("return", _context2.sent);
@@ -65466,22 +65721,22 @@ var CompanyService = /*#__PURE__*/function () {
         }, _callee2);
       }));
 
-      function get(_x) {
-        return _get.apply(this, arguments);
+      function create(_x) {
+        return _create.apply(this, arguments);
       }
 
-      return get;
+      return create;
     }()
   }, {
-    key: "update",
+    key: "get",
     value: function () {
-      var _update = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(companyId, data) {
+      var _get = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(companyId) {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].put("/api/companies/".concat(companyId), data);
+                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/companies/".concat(companyId));
 
               case 2:
                 return _context3.abrupt("return", _context3.sent);
@@ -65494,7 +65749,35 @@ var CompanyService = /*#__PURE__*/function () {
         }, _callee3);
       }));
 
-      function update(_x2, _x3) {
+      function get(_x2) {
+        return _get.apply(this, arguments);
+      }
+
+      return get;
+    }()
+  }, {
+    key: "update",
+    value: function () {
+      var _update = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(companyId, data) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return _utils_api__WEBPACK_IMPORTED_MODULE_1__["default"].put("/api/companies/".concat(companyId), data);
+
+              case 2:
+                return _context4.abrupt("return", _context4.sent);
+
+              case 3:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }));
+
+      function update(_x3, _x4) {
         return _update.apply(this, arguments);
       }
 
