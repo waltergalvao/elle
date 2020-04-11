@@ -2075,7 +2075,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this2.isSaving = true;
                 _context.next = 3;
-                return _services_batchService__WEBPACK_IMPORTED_MODULE_2__["BatchService"].store(_this2.formData);
+                return _services_batchService__WEBPACK_IMPORTED_MODULE_2__["default"].store(_this2.formData);
 
               case 3:
                 response = _context.sent;
@@ -2574,8 +2574,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
 //
 //
 //
@@ -5991,8 +5989,6 @@ var render = function() {
                 _c("tr", [
                   _c("th", { staticClass: "text-left" }, [_vm._v("Name")]),
                   _vm._v(" "),
-                  _c("th", { staticClass: "text-left" }, [_vm._v("Contacts")]),
-                  _vm._v(" "),
                   _c("th", { staticClass: "text-left" }, [_vm._v("Status")]),
                   _vm._v(" "),
                   _c("th", { staticClass: "text-right" }, [_vm._v("Action")])
@@ -6004,8 +6000,6 @@ var render = function() {
                 _vm._l(_vm.batches.data, function(batch) {
                   return _c("tr", { key: batch.id }, [
                     _c("td", [_vm._v(_vm._s(batch.name))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("5")]),
                     _vm._v(" "),
                     _c(
                       "td",
