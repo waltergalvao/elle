@@ -4,4 +4,6 @@
 
 This system offers a dashboard and API to manage contacts information.  
 
-More information will be added later.
+#### DEPRECATED
+
+This system is no longer actively developed and is not complete.
